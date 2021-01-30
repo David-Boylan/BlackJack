@@ -1,5 +1,4 @@
 package blackjackGame;
-
 public class Cards {
 
     // spades
