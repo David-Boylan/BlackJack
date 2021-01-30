@@ -65,7 +65,6 @@ public class Blackjack {
                         }
                     }
                     if (playerCard5 == "" && pickedACard == false) {
-                        System.out.println("helo");
                         while (i < 5) {
                             playerCard5 = deal.DealPlayer();
                             if (playerCard5 != "nothing") {
