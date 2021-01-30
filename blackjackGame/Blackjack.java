@@ -9,6 +9,7 @@ public class Blackjack {
         String reply = "yes";
         boolean pickedACard = false;
         while (reply == "yes" || reply == "Yes" || reply == "y"|| reply == "Y"){
+            System.out.println("the code has restarted");
             Dealer.shuffle();
             boolean win = true;
             int i=0;
