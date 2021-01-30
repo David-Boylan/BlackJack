@@ -58,4 +58,114 @@ public class Cards {
     public static int jackOfHearts = 1;
     public static int queenOfHearts = 1;
     public static int kingOfHearts = 1;
+
+    int junk = 0;
+    public int value(String card){
+        if (card == "AS"){
+            return 11;
+        }if (card == "2S"){
+            return 2;
+        }if (card == "3S"){
+            return 3;
+        }if (card == "4S"){
+            return 4;
+        }if (card == "5S"){
+            return 5;
+        }if (card == "6S"){
+            return 6;
+        }if (card == "7S"){
+            return 7;
+        }if (card == "8S"){
+            return 8;
+        }if (card == "9S"){
+            return 9;
+        }if (card == "10S"){
+            return 10;
+        }if (card == "JS"){
+            return 10;
+        }if (card == "QS"){
+            return 10;
+        }if (card == "KS"){
+            return 10;
+        }if (card == "AC"){//clubs
+            return 11;
+        }if (card == "2C"){
+            return 2;
+        }if (card == "3C"){
+            return 3;
+        }if (card == "4C"){
+            return 4;
+        }if (card == "5C"){
+            return 5;
+        }if (card == "6C"){
+            return 6;
+        }if (card == "7C"){
+            return 7;
+        }if (card == "8C"){
+            return 8;
+        }if (card == "9C"){
+            return 9;
+        }if (card == "10C"){
+            return 10;
+        }if (card == "JC"){
+            return 10;
+        }if (card == "QC"){
+            return 10;
+        }if (card == "KC"){
+            return 10;
+        }if (card == "AD"){//diamonds
+            return 11;
+        }if (card == "2D"){
+            return 2;
+        }if (card == "3D"){
+            return 3;
+        }if (card == "4D"){
+            return 4;
+        }if (card == "5D"){
+            return 5;
+        }if (card == "6D"){
+            return 6;
+        }if (card == "7D"){
+            return 7;
+        }if (card == "8D"){
+            return 8;
+        }if (card == "9D"){
+            return 9;
+        }if (card == "10D"){
+            return 10;
+        }if (card == "JD"){
+            return 10;
+        }if (card == "QD"){
+            return 10;
+        }if (card == "KD"){
+            return 10;
+        }if (card == "AH"){//hearts
+            return 11;
+        }if (card == "2H"){
+            return 2;
+        }if (card == "3H"){
+            return 3;
+        }if (card == "4H"){
+            return 4;
+        }if (card == "5H"){
+            return 5;
+        }if (card == "6H"){
+            return 6;
+        }if (card == "7H"){
+            return 7;
+        }if (card == "8H"){
+            return 8;
+        }if (card == "9H"){
+            return 9;
+        }if (card == "10H"){
+            return 10;
+        }if (card == "JH"){
+            return 10;
+        }if (card == "QH"){
+            return 10;
+        }if (card == "KH"){
+            return 10;
+        }
+        return junk;
+    }
 }
