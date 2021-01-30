@@ -7,6 +7,7 @@ public class Blackjack {
         Dealer deal = new Dealer();
         Cards card = new Cards();
         String reply = "yes";
+        boolean pickedACard = false;
         while (reply == "yes" || reply == "Yes" || reply == "y"|| reply == "Y"){
             Dealer.shuffle();
             boolean win = true;
@@ -36,35 +37,39 @@ public class Blackjack {
                 }
             }
             cardTotal = card.value(playerCard1) +card.value(playerCard2); //card total
-            while (hitStand == "hit" && playerCard5 != "" && win != false){
+            while (hitStand == "hit" && playerCard5 == "" && win != false){
+                pickedACard = false;
                 System.out.println("your total card total is " + cardTotal + " would you like to hit or stand");
                 hitStand = Gargrave.nextLine();
                 if (hitStand == "hit" || hitStand == "Hit" || hitStand == "h" || hitStand == "H"){
                     if (playerCard3 == ""){
                         while(i<3){
                             playerCard3 = deal.DealPlayer();
-                            if(playerCard3 != "nothing"){
+                            if(playerCard3 != "nothing" && pickedACard == false){
                                 i++;
                                 cardTotal = cardTotal + card.value(playerCard3);
+                                pickedACard = true;
                             }
                         }
                     }
-                }
-                if (playerCard4 == ""){
-                    while(i<4){
-                        playerCard4 = deal.DealPlayer();
-                        if(playerCard4 != "nothing"){
-                            i++;
-                            cardTotal = cardTotal + card.value(playerCard4);
+                    if (playerCard4 == "" && pickedACard == false){
+                        while(i<4){
+                            playerCard4 = deal.DealPlayer();
+                            if(playerCard4 != "nothing"){
+                                i++;
+                                cardTotal = cardTotal + card.value(playerCard4);
+                                pickedACard = true;
+                            }
                         }
                     }
-                }
-                if (playerCard5 == ""){
-                    while(i<5){
-                        playerCard5 = deal.DealPlayer();
-                        if(playerCard5 != "nothing"){
-                            i++;
-                            cardTotal = cardTotal + card.value(playerCard5);
+                    if (playerCard5 == "" && pickedACard == false){
+                        while(i<5){
+                            playerCard5 = deal.DealPlayer();
+                            if(playerCard5 != "nothing"){
+                                i++;
+                                cardTotal = cardTotal + card.value(playerCard5);
+                                pickedACard = true;
+                            }
                         }
                     }
                 }
