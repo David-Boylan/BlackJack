@@ -28,31 +28,32 @@ public class Blackjack {
                 playerCard1 = deal.DealPlayer();
                 if (playerCard1 != "nothing"){
                     i++;
+                    cardTotal = card.value(playerCard1);
                 }
             }
             while (i<2){ //get card 2
                 playerCard2 = deal.DealPlayer();
                 if (playerCard2 != "nothing"){
                     i++;
+                    cardTotal += card.value(playerCard2);
                 }
             }
-            cardTotal = card.value(playerCard1) +card.value(playerCard2); //card total
             while (hitStand == "hit" && playerCard5 == "" && win != false){
                 pickedACard = false;
                 System.out.println("your total card total is " + cardTotal + " would you like to hit or stand");
-                hitStand = Gargrave.nextLine();
+                hitStand = Gargrave.next();
                 if (hitStand == "hit" || hitStand == "Hit" || hitStand == "h" || hitStand == "H"){
-                    if (playerCard3 == ""){
+                    if (playerCard3 == "" && pickedACard == false && hitStand != "stand"){
                         while(i<3){
                             playerCard3 = deal.DealPlayer();
-                            if(playerCard3 != "nothing" && pickedACard == false){
+                            if(playerCard3 != "nothing" && pickedACard == false && hitStand != "stand"){
                                 i++;
                                 cardTotal = cardTotal + card.value(playerCard3);
                                 pickedACard = true;
                             }
                         }
                     }
-                    if (playerCard4 == "" && pickedACard == false){
+                    if (playerCard4 == "" && pickedACard == false && hitStand != "stand"){
                         while(i<4){
                             playerCard4 = deal.DealPlayer();
                             if(playerCard4 != "nothing"){
@@ -62,7 +63,7 @@ public class Blackjack {
                             }
                         }
                     }
-                    if (playerCard5 == "" && pickedACard == false){
+                    if (playerCard5 == "" && pickedACard == false && hitStand != "stand"){
                         while(i<5){
                             playerCard5 = deal.DealPlayer();
                             if(playerCard5 != "nothing"){
@@ -74,7 +75,6 @@ public class Blackjack {
                     }
                 }
             }
-            hitStand = "hit";
         }
     }
 }
