@@ -131,6 +131,8 @@ public class Blackjack {
                     }
                 }
             }
+            System.out.println("the computer got " + comCardTotal);
+            System.out.println("and you got " + playerCardTotal);
             if (playerCardTotal > comCardTotal) {
                 win = true;
             }
@@ -139,6 +141,8 @@ public class Blackjack {
             } else {
                 System.out.println("computer wins :(");
             }
+            System.out.println("would you like to play again?");
+            reply = Gargrave.next();
         }
     }
 }
