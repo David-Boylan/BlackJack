@@ -55,6 +55,7 @@ public class Blackjack {
                     comCardTotal += card.value(comCard2);
                 }
             }
+            System.out.println("the computer has " + comCardTotal);
             while (hitStand.equals("hit") && playerCard5.equals("") && playerCardTotal < 22) {
                 pickedACard = false;
                 System.out.println("your total card total is " + playerCardTotal + " would you like to hit or stand");
@@ -63,12 +64,9 @@ public class Blackjack {
                     if (playerCard3 == "" && pickedACard == false) {
                         while (i < 3) {
                             playerCard3 = deal.DealPlayer();
-                            if (playerCard3 != "nothing" && pickedACard == false) {
+                            if (playerCard3 != "nothing") {
                                 i++;
                                 playerCardTotal = playerCardTotal + card.value(playerCard3);
-                                if (playerCardTotal > 21) {
-
-                                }
                                 pickedACard = true;
                             }
                         }
@@ -95,17 +93,21 @@ public class Blackjack {
                     }
                 }
             }
+            if (playerCardTotal>21){
+                System.out.println("You busted at " + playerCardTotal);
+            }
+            else{
+                System.out.println("You end at " + playerCardTotal);
+            }
             while (comCardTotal < 16) {
+                System.out.println(comCardTotal);
                 pickedACard = false;
-                if (comCard3 == "" && pickedACard == false) {
+                if (comCard3.equals("") && pickedACard == false) {
                     while (c < 3) {
                         comCard3 = deal.DealPlayer();
-                        if (comCard3 != "nothing" && pickedACard == false) {
+                        if (comCard3 != "nothing") {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard3);
-                            if (comCardTotal > 21) {
-
-                            }
                             pickedACard = true;
                         }
                     }
