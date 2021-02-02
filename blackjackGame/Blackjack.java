@@ -133,8 +133,7 @@ public class Blackjack {
                     }
                 }
             }
-            System.out.println("the computer got " + comCardTotal);
-            System.out.println("and you got " + playerCardTotal);
+            System.out.println("and the computer got " + comCardTotal);
             if (playerCardTotal > comCardTotal && playerCardTotal <= 21 && comCardTotal <= 22) {
                 win = true;
             }
