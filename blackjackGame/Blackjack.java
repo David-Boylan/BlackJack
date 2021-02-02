@@ -56,7 +56,7 @@ public class Blackjack {
                 }
             }
             System.out.println("the computer has " + comCardTotal);
-            while (hitStand.equals("hit") && playerCard5.equals("") && playerCardTotal < 22) {
+            while (hitStand.equals("hit") && playerCard5.equals("") && playerCardTotal < 22 && playerCard5 == ""){
                 pickedACard = false;
                 System.out.println("your total card total is " + playerCardTotal + " would you like to hit or stand");
                 hitStand = Gargrave.next();
@@ -99,8 +99,8 @@ public class Blackjack {
             else{
                 System.out.println("You end at " + playerCardTotal);
             }
-            while (comCardTotal < 16) {
-                System.out.println(comCardTotal);
+            c = 2;
+            while (comCardTotal < 16 && comCard5 == "" ) {
                 pickedACard = false;
                 if (comCard3 == "" && pickedACard == false) {
                     while (c < 3) {
@@ -109,7 +109,6 @@ public class Blackjack {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard3);
                             pickedACard = true;
-                            System.out.println("helo");
                         }
                     }
                 }
@@ -120,7 +119,6 @@ public class Blackjack {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard4);
                             pickedACard = true;
-                            System.out.println("helo2");
                         }
                     }
                 }
@@ -131,14 +129,13 @@ public class Blackjack {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard5);
                             pickedACard = true;
-                            System.out.println("helo3");
                         }
                     }
                 }
             }
             System.out.println("the computer got " + comCardTotal);
             System.out.println("and you got " + playerCardTotal);
-            if (playerCardTotal > comCardTotal) {
+            if (playerCardTotal > comCardTotal && playerCardTotal <= 21 && comCardTotal <= 22) {
                 win = true;
             }
             if (win == true) {
