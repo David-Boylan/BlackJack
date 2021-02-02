@@ -9,7 +9,7 @@ public class Blackjack {
         Cards card = new Cards();
         String reply = "yes";
         boolean pickedACard = false;
-        while (reply == "yes" || reply == "Yes" || reply == "y" || reply == "Y") {
+        while (reply == "yes") {
             Dealer.shuffle();
             boolean win = false;
             int i = 0;
@@ -137,9 +137,16 @@ public class Blackjack {
             if (playerCardTotal > comCardTotal && playerCardTotal <= 21 && comCardTotal <= 22) {
                 win = true;
             }
+            else if(playerCardTotal == comCardTotal){
+                win = false;
+            }
             if (win == true) {
                 System.out.println("You Win :)");
-            } else {
+            } 
+            else if (playerCardTotal == comCardTotal){
+                System.out.println("You tied with the Computer :|");
+            }
+            else{
                 System.out.println("computer wins :(");
             }
             System.out.println("would you like to play again?");
