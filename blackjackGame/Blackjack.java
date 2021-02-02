@@ -102,13 +102,14 @@ public class Blackjack {
             while (comCardTotal < 16) {
                 System.out.println(comCardTotal);
                 pickedACard = false;
-                if (comCard3.equals("") && pickedACard == false) {
+                if (comCard3 == "" && pickedACard == false) {
                     while (c < 3) {
                         comCard3 = deal.DealPlayer();
                         if (comCard3 != "nothing") {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard3);
                             pickedACard = true;
+                            System.out.println("helo");
                         }
                     }
                 }
@@ -119,6 +120,7 @@ public class Blackjack {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard4);
                             pickedACard = true;
+                            System.out.println("helo2");
                         }
                     }
                 }
@@ -129,6 +131,7 @@ public class Blackjack {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard5);
                             pickedACard = true;
+                            System.out.println("helo3");
                         }
                     }
                 }
