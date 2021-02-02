@@ -91,6 +91,15 @@ public class Blackjack {
                             }
                         }
                     }
+                    if (playerCardTotal>21){
+                        if (playerCard1 == "AS" || playerCard1 == "AH" || playerCard1 == "AD" || playerCard1 == "AC"||
+                            playerCard2 == "AS" || playerCard2 == "AH" || playerCard2 == "AD" || playerCard2 == "AC"||
+                            playerCard3 == "AS" || playerCard3 == "AH" || playerCard3 == "AD" || playerCard3 == "AC"||
+                            playerCard4 == "AS" || playerCard4 == "AH" || playerCard4 == "AD" || playerCard4 == "AC"||
+                            playerCard5 == "AS" || playerCard5 == "AH" || playerCard5 == "AD" || playerCard5 == "AC"){
+                                playerCardTotal -= 10;
+                        }
+                    }
                 }
             }
             if (playerCardTotal>21){
@@ -130,6 +139,15 @@ public class Blackjack {
                             comCardTotal = comCardTotal + card.value(comCard5);
                             pickedACard = true;
                         }
+                    }
+                }
+                if (comCardTotal>21){
+                    if (comCard1 == "AS" || comCard1 == "AH" || comCard1 == "AD" || comCard1 == "AC"||
+                        comCard2 == "AS" || comCard2 == "AH" || comCard2 == "AD" || comCard2 == "AC"||
+                        comCard3 == "AS" || comCard3 == "AH" || comCard3 == "AD" || comCard3 == "AC"||
+                        comCard4 == "AS" || comCard4 == "AH" || comCard4 == "AD" || comCard4 == "AC"||
+                        comCard5 == "AS" || comCard5 == "AH" || comCard5 == "AD" || comCard5 == "AC"){
+                            comCardTotal -= 10;
                     }
                 }
             }
