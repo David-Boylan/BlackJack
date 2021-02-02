@@ -9,7 +9,7 @@ public class Blackjack {
         Cards card = new Cards();
         String reply = "yes";
         boolean pickedACard = false;
-        while (reply == "yes") {
+        while (reply.equals("yes")) {
             Dealer.shuffle();
             boolean win = false;
             int i = 0;
