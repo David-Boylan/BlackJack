@@ -215,7 +215,7 @@ public class Blackjack {
                 System.out.println("computer wins :(");
                 money = money - bet;
             }
-            System.out.println("You have $ " + money);
+            System.out.println("You have $" + money);
             if (money > 0) {
                 System.out.println("would you like to play again?");
                 reply = Gargrave.next();
