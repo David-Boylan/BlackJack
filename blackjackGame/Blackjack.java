@@ -9,11 +9,14 @@ public class Blackjack {
         Cards card = new Cards();
         String reply = "yes";
         boolean pickedACard = false;
+        int money = 100;
         while (reply.equals("yes")) {
             Dealer.shuffle();
             boolean win = false;
+            boolean push = false;
             int i = 0;
             int c = 0;
+            int bet = 0;
             int playerCardTotal = 0;
             int comCardTotal = 0;
             String hitStand = "hit";
@@ -27,6 +30,8 @@ public class Blackjack {
             String comCard3 = "";
             String comCard4 = "";
             String comCard5 = "";
+            System.out.println("How much would you like to bet, you have $" + money);
+            bet = Gargrave.nextInt();
             while (i < 1) { // get card 1
                 playerCard1 = deal.DealPlayer();
                 if (playerCard1 != "nothing") {
@@ -55,9 +60,11 @@ public class Blackjack {
                     comCardTotal += card.value(comCard2);
                 }
             }
-            System.out.println("the computer has " + comCardTotal);
+            System.out.println("the computer has a " + comCard1);
             while (hitStand.equals("hit") && playerCard5.equals("") && playerCardTotal < 22 && playerCard5 == "") {
                 pickedACard = false;
+                System.out.println("you were have a " + playerCard1 + " " + playerCard2 + " " + playerCard3 + " "
+                        + playerCard4 + " " + playerCard5 + " ");
                 System.out.println("your total card total is " + playerCardTotal + " would you like to hit or stand");
                 hitStand = Gargrave.next();
                 if (hitStand.equals("hit") || hitStand.equals("Hit") || hitStand.equals("h") || hitStand.equals("H")) {
@@ -183,20 +190,39 @@ public class Blackjack {
                 }
             }
             System.out.println("and the computer got " + comCardTotal);
-            if (playerCardTotal > comCardTotal && playerCardTotal <= 21 && comCardTotal <= 22) {
+            if (playerCardTotal > 21) {
+                playerCardTotal = 0;
+            }
+            if (comCardTotal > 21) {
+                comCardTotal = 0;
+            }
+            if (playerCardTotal > comCardTotal) {
                 win = true;
-            } else if (playerCardTotal == comCardTotal) {
+            }
+            if (playerCardTotal > 21) {
                 win = false;
+            }
+            if (comCardTotal == playerCardTotal) {
+                push = true;
             }
             if (win == true) {
                 System.out.println("You Win :)");
-            } else if (playerCardTotal == comCardTotal) {
+                int moneyEarned = bet * 2;
+                money = money + moneyEarned;
+            } else if (push == true) {
                 System.out.println("You tied with the Computer :|");
             } else {
                 System.out.println("computer wins :(");
+                money = money - bet;
             }
-            System.out.println("would you like to play again?");
-            reply = Gargrave.next();
+            System.out.println("You have $ " + money);
+            if (money > 0) {
+                System.out.println("would you like to play again?");
+                reply = Gargrave.next();
+            } else {
+                reply = "heck you you loser";
+            }
         }
+        System.out.println("thanks for playing");
     }
 }
