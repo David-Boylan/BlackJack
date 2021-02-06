@@ -1,4 +1,5 @@
 package blackjackGame;
+
 import java.util.*;
 
 public class Dealer {
@@ -333,6 +334,5 @@ public class Dealer {
         Cards.jackOfHearts = 1;
         Cards.queenOfHearts = 1;
         Cards.kingOfHearts = 1;
-
     }
 }
