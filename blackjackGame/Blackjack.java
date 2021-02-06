@@ -56,7 +56,7 @@ public class Blackjack {
                 }
             }
             System.out.println("the computer has " + comCardTotal);
-            while (hitStand.equals("hit") && playerCard5.equals("") && playerCardTotal < 22 && playerCard5 == ""){
+            while (hitStand.equals("hit") && playerCard5.equals("") && playerCardTotal < 22 && playerCard5 == "") {
                 pickedACard = false;
                 System.out.println("your total card total is " + playerCardTotal + " would you like to hit or stand");
                 hitStand = Gargrave.next();
@@ -91,25 +91,40 @@ public class Blackjack {
                             }
                         }
                     }
-                    if (playerCardTotal>21){
-                        if (playerCard1 == "AS" || playerCard1 == "AH" || playerCard1 == "AD" || playerCard1 == "AC"||
-                            playerCard2 == "AS" || playerCard2 == "AH" || playerCard2 == "AD" || playerCard2 == "AC"||
-                            playerCard3 == "AS" || playerCard3 == "AH" || playerCard3 == "AD" || playerCard3 == "AC"||
-                            playerCard4 == "AS" || playerCard4 == "AH" || playerCard4 == "AD" || playerCard4 == "AC"||
-                            playerCard5 == "AS" || playerCard5 == "AH" || playerCard5 == "AD" || playerCard5 == "AC"){
-                                playerCardTotal -= 10;
-                        }
-                    }
                 }
             }
-            if (playerCardTotal>21){
-                System.out.println("You busted at " + playerCardTotal);
+            if (playerCardTotal > 21) {
+                if (playerCard1 == "AS" || playerCard1 == "AH" || playerCard1 == "AD" || playerCard1 == "AC") {
+                    playerCardTotal -= 10;
+                }
             }
-            else{
+            if (playerCardTotal > 21) {
+                if (playerCard2 == "AS" || playerCard2 == "AH" || playerCard2 == "AD" || playerCard2 == "AC") {
+                    playerCardTotal -= 10;
+                }
+            }
+            if (playerCardTotal > 21) {
+                if (playerCard3 == "AS" || playerCard3 == "AH" || playerCard3 == "AD" || playerCard3 == "AC") {
+                    playerCardTotal -= 10;
+                }
+            }
+            if (playerCardTotal > 21) {
+                if (playerCard4 == "AS" || playerCard4 == "AH" || playerCard4 == "AD" || playerCard4 == "AC") {
+                    playerCardTotal -= 10;
+                }
+            }
+            if (playerCardTotal > 21) {
+                if (playerCard5 == "AS" || playerCard5 == "AH" || playerCard5 == "AD" || playerCard5 == "AC") {
+                    playerCardTotal -= 10;
+                }
+            }
+            if (playerCardTotal > 21) {
+                System.out.println("You busted at " + playerCardTotal);
+            } else {
                 System.out.println("You end at " + playerCardTotal);
             }
             c = 2;
-            while (comCardTotal < 16 && comCard5 == "" ) {
+            while (comCardTotal < 16 && comCard5 == "") {
                 pickedACard = false;
                 if (comCard3 == "" && pickedACard == false) {
                     while (c < 3) {
@@ -141,30 +156,43 @@ public class Blackjack {
                         }
                     }
                 }
-                if (comCardTotal>21){
-                    if (comCard1 == "AS" || comCard1 == "AH" || comCard1 == "AD" || comCard1 == "AC"||
-                        comCard2 == "AS" || comCard2 == "AH" || comCard2 == "AD" || comCard2 == "AC"||
-                        comCard3 == "AS" || comCard3 == "AH" || comCard3 == "AD" || comCard3 == "AC"||
-                        comCard4 == "AS" || comCard4 == "AH" || comCard4 == "AD" || comCard4 == "AC"||
-                        comCard5 == "AS" || comCard5 == "AH" || comCard5 == "AD" || comCard5 == "AC"){
-                            comCardTotal -= 10;
-                    }
+            }
+            if (comCardTotal > 21) {
+                if (comCard1 == "AS" || comCard1 == "AH" || comCard1 == "AD" || comCard1 == "AC") {
+                    comCardTotal -= 10;
+                }
+            }
+            if (comCardTotal > 21) {
+                if (comCard2 == "AS" || comCard2 == "AH" || comCard2 == "AD" || comCard2 == "AC") {
+                    comCardTotal -= 10;
+                }
+            }
+            if (comCardTotal > 21) {
+                if (comCard3 == "AS" || comCard3 == "AH" || comCard3 == "AD" || comCard3 == "AC") {
+                    comCardTotal -= 10;
+                }
+            }
+            if (comCardTotal > 21) {
+                if (comCard4 == "AS" || comCard4 == "AH" || comCard4 == "AD" || comCard4 == "AC") {
+                    comCardTotal -= 10;
+                }
+            }
+            if (comCardTotal > 21) {
+                if (comCard5 == "AS" || comCard5 == "AH" || comCard5 == "AD" || comCard5 == "AC") {
+                    comCardTotal -= 10;
                 }
             }
             System.out.println("and the computer got " + comCardTotal);
             if (playerCardTotal > comCardTotal && playerCardTotal <= 21 && comCardTotal <= 22) {
                 win = true;
-            }
-            else if(playerCardTotal == comCardTotal){
+            } else if (playerCardTotal == comCardTotal) {
                 win = false;
             }
             if (win == true) {
                 System.out.println("You Win :)");
-            } 
-            else if (playerCardTotal == comCardTotal){
+            } else if (playerCardTotal == comCardTotal) {
                 System.out.println("You tied with the Computer :|");
-            }
-            else{
+            } else {
                 System.out.println("computer wins :(");
             }
             System.out.println("would you like to play again?");
