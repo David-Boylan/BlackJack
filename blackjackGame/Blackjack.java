@@ -10,7 +10,17 @@ public class Blackjack {
         String reply = "yes";
         boolean pickedACard = false;
         int money = 100;
-        while (reply.equals("yes")) {
+        boolean playerCard1AceUsed = false;
+        boolean playerCard2AceUsed = false;
+        boolean playerCard3AceUsed = false;
+        boolean playerCard4AceUsed = false;
+        boolean playerCard5AceUsed = false;
+        boolean comCard1AceUsed = false;
+        boolean comCard2AceUsed = false;
+        boolean comCard3AceUsed = false;
+        boolean comCard4AceUsed = false;
+        boolean comCard5AceUsed = false;
+        while (reply.equals("yes") || reply.equals("y") || reply.equals("Yes")) {
             Dealer.shuffle();
             boolean win = false;
             boolean push = false;
@@ -61,12 +71,15 @@ public class Blackjack {
                 }
             }
             System.out.println("the computer has a " + comCard1);
-            while (hitStand.equals("hit") && playerCard5.equals("") && playerCardTotal < 22 && playerCard5 == "") {
+            while (hitStand.equals("hit") ||hitStand.equals("h") || hitStand.equals("Hit") && playerCardTotal < 22 && playerCard5 == "") {
                 pickedACard = false;
-                System.out.println("you were have a " + playerCard1 + " " + playerCard2 + " " + playerCard3 + " "
+                System.out.println("you have a " + playerCard1 + " " + playerCard2 + " " + playerCard3 + " "
                         + playerCard4 + " " + playerCard5 + " ");
                 System.out.println("your total card total is " + playerCardTotal + " would you like to hit or stand");
                 hitStand = Gargrave.next();
+                if(playerCardTotal > 21){
+                    hitStand = "stand";
+                }
                 if (hitStand.equals("hit") || hitStand.equals("Hit") || hitStand.equals("h") || hitStand.equals("H")) {
                     if (playerCard3 == "" && pickedACard == false) {
                         while (i < 3) {
@@ -75,6 +88,36 @@ public class Blackjack {
                                 i++;
                                 playerCardTotal = playerCardTotal + card.value(playerCard3);
                                 pickedACard = true;
+                                if (playerCardTotal > 21) {
+                                    if (playerCard1 == "AS" || playerCard1 == "AH" || playerCard1 == "AD" || playerCard1 == "AC" && playerCard1AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard1AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard2 == "AS" || playerCard2 == "AH" || playerCard2 == "AD" || playerCard2 == "AC" && playerCard2AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard2AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard3 == "AS" || playerCard3 == "AH" || playerCard3 == "AD" || playerCard3 == "AC" && playerCard3AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard3AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard4 == "AS" || playerCard4 == "AH" || playerCard4 == "AD" || playerCard4 == "AC" && playerCard4AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard4AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard5 == "AS" || playerCard5 == "AH" || playerCard5 == "AD" || playerCard5 == "AC" && playerCard5AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard5AceUsed = true;
+                                    }
+                                }
                             }
                         }
                     }
@@ -85,6 +128,36 @@ public class Blackjack {
                                 i++;
                                 playerCardTotal = playerCardTotal + card.value(playerCard4);
                                 pickedACard = true;
+                                if (playerCardTotal > 21) {
+                                    if (playerCard1 == "AS" || playerCard1 == "AH" || playerCard1 == "AD" || playerCard1 == "AC" && playerCard1AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard1AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard2 == "AS" || playerCard2 == "AH" || playerCard2 == "AD" || playerCard2 == "AC" && playerCard2AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard2AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard3 == "AS" || playerCard3 == "AH" || playerCard3 == "AD" || playerCard3 == "AC" && playerCard3AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard3AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard4 == "AS" || playerCard4 == "AH" || playerCard4 == "AD" || playerCard4 == "AC" && playerCard4AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard4AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard5 == "AS" || playerCard5 == "AH" || playerCard5 == "AD" || playerCard5 == "AC" && playerCard5AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard5AceUsed = true;
+                                    }
+                                }
                             }
                         }
                     }
@@ -95,34 +168,39 @@ public class Blackjack {
                                 i++;
                                 playerCardTotal = playerCardTotal + card.value(playerCard5);
                                 pickedACard = true;
+                                if (playerCardTotal > 21) {
+                                    if (playerCard1 == "AS" || playerCard1 == "AH" || playerCard1 == "AD" || playerCard1 == "AC" && playerCard1AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard1AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard2 == "AS" || playerCard2 == "AH" || playerCard2 == "AD" || playerCard2 == "AC" && playerCard2AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard2AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard3 == "AS" || playerCard3 == "AH" || playerCard3 == "AD" || playerCard3 == "AC" && playerCard3AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard3AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard4 == "AS" || playerCard4 == "AH" || playerCard4 == "AD" || playerCard4 == "AC" && playerCard4AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard4AceUsed = true;
+                                    }
+                                }
+                                if (playerCardTotal > 21) {
+                                    if (playerCard5 == "AS" || playerCard5 == "AH" || playerCard5 == "AD" || playerCard5 == "AC" && playerCard5AceUsed == false) {
+                                        playerCardTotal -= 10;
+                                        playerCard5AceUsed = true;
+                                    }
+                                }
                             }
                         }
                     }
-                }
-            }
-            if (playerCardTotal > 21) {
-                if (playerCard1 == "AS" || playerCard1 == "AH" || playerCard1 == "AD" || playerCard1 == "AC") {
-                    playerCardTotal -= 10;
-                }
-            }
-            if (playerCardTotal > 21) {
-                if (playerCard2 == "AS" || playerCard2 == "AH" || playerCard2 == "AD" || playerCard2 == "AC") {
-                    playerCardTotal -= 10;
-                }
-            }
-            if (playerCardTotal > 21) {
-                if (playerCard3 == "AS" || playerCard3 == "AH" || playerCard3 == "AD" || playerCard3 == "AC") {
-                    playerCardTotal -= 10;
-                }
-            }
-            if (playerCardTotal > 21) {
-                if (playerCard4 == "AS" || playerCard4 == "AH" || playerCard4 == "AD" || playerCard4 == "AC") {
-                    playerCardTotal -= 10;
-                }
-            }
-            if (playerCardTotal > 21) {
-                if (playerCard5 == "AS" || playerCard5 == "AH" || playerCard5 == "AD" || playerCard5 == "AC") {
-                    playerCardTotal -= 10;
                 }
             }
             if (playerCardTotal > 21) {
@@ -131,7 +209,7 @@ public class Blackjack {
                 System.out.println("You end at " + playerCardTotal);
             }
             c = 2;
-            while (comCardTotal < 16 && comCard5 == "") {
+            while (comCardTotal < 17 && comCard5 == "") {
                 pickedACard = false;
                 if (comCard3 == "" && pickedACard == false) {
                     while (c < 3) {
@@ -140,6 +218,36 @@ public class Blackjack {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard3);
                             pickedACard = true;
+                            if (comCardTotal > 21) {
+                                if (comCard1 == "AS" || comCard1 == "AH" || comCard1 == "AD" || comCard1 == "AC" && comCard1AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard1AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard2 == "AS" || comCard2 == "AH" || comCard2 == "AD" || comCard2 == "AC" && comCard2AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard2AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard3 == "AS" || comCard3 == "AH" || comCard3 == "AD" || comCard3 == "AC" && comCard3AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard3AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard4 == "AS" || comCard4 == "AH" || comCard4 == "AD" || comCard4 == "AC" && comCard4AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard4AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard5 == "AS" || comCard5 == "AH" || comCard5 == "AD" || comCard5 == "AC" && comCard5AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard5AceUsed = true;
+                                }
+                            }
                         }
                     }
                 }
@@ -150,6 +258,36 @@ public class Blackjack {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard4);
                             pickedACard = true;
+                            if (comCardTotal > 21) {
+                                if (comCard1 == "AS" || comCard1 == "AH" || comCard1 == "AD" || comCard1 == "AC" && comCard1AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard1AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard2 == "AS" || comCard2 == "AH" || comCard2 == "AD" || comCard2 == "AC" && comCard2AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard2AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard3 == "AS" || comCard3 == "AH" || comCard3 == "AD" || comCard3 == "AC" && comCard3AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard3AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard4 == "AS" || comCard4 == "AH" || comCard4 == "AD" || comCard4 == "AC" && comCard4AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard4AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard5 == "AS" || comCard5 == "AH" || comCard5 == "AD" || comCard5 == "AC" && comCard5AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard5AceUsed = true;
+                                }
+                            }
                         }
                     }
                 }
@@ -160,33 +298,38 @@ public class Blackjack {
                             c++;
                             comCardTotal = comCardTotal + card.value(comCard5);
                             pickedACard = true;
+                            if (comCardTotal > 21) {
+                                if (comCard1 == "AS" || comCard1 == "AH" || comCard1 == "AD" || comCard1 == "AC" && comCard1AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard1AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard2 == "AS" || comCard2 == "AH" || comCard2 == "AD" || comCard2 == "AC" && comCard2AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard2AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard3 == "AS" || comCard3 == "AH" || comCard3 == "AD" || comCard3 == "AC" && comCard3AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard3AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard4 == "AS" || comCard4 == "AH" || comCard4 == "AD" || comCard4 == "AC" && comCard4AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard4AceUsed = true;
+                                }
+                            }
+                            if (comCardTotal > 21) {
+                                if (comCard5 == "AS" || comCard5 == "AH" || comCard5 == "AD" || comCard5 == "AC" && comCard5AceUsed == false) {
+                                    comCardTotal -= 10;
+                                    comCard5AceUsed = true;
+                                }
+                            }
                         }
                     }
-                }
-            }
-            if (comCardTotal > 21) {
-                if (comCard1 == "AS" || comCard1 == "AH" || comCard1 == "AD" || comCard1 == "AC") {
-                    comCardTotal -= 10;
-                }
-            }
-            if (comCardTotal > 21) {
-                if (comCard2 == "AS" || comCard2 == "AH" || comCard2 == "AD" || comCard2 == "AC") {
-                    comCardTotal -= 10;
-                }
-            }
-            if (comCardTotal > 21) {
-                if (comCard3 == "AS" || comCard3 == "AH" || comCard3 == "AD" || comCard3 == "AC") {
-                    comCardTotal -= 10;
-                }
-            }
-            if (comCardTotal > 21) {
-                if (comCard4 == "AS" || comCard4 == "AH" || comCard4 == "AD" || comCard4 == "AC") {
-                    comCardTotal -= 10;
-                }
-            }
-            if (comCardTotal > 21) {
-                if (comCard5 == "AS" || comCard5 == "AH" || comCard5 == "AD" || comCard5 == "AC") {
-                    comCardTotal -= 10;
                 }
             }
             System.out.println("and the computer got " + comCardTotal);
